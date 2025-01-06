@@ -1,0 +1,620 @@
+<table id="technical_requirement" class="table table-striped no-wrap table-bordered responsive"
+    style="font-size: 13px; color: #000; padding: 5px 10px !important">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Checklist</th>
+            <th>Status</th>
+            <th>Reason</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="">
+        <tr>
+            <td>1</td>
+            <td>PROPOSAL/CLAIM FORM</td>
+            <td>
+                <button type="button" class="btn btn-danger btn-sm">
+                    Failed
+                </button>
+            </td>
+
+            <td>No PROPOSAL/CLAIM FORM form attached to request</td>
+            <td>
+                <a class="btn btn-success ml-sm"
+                    href="forms/new-request?token=d41d8cd98f00b204e9800998ecf8427e04012024135916" id="approveform">Fill
+                    TRAVEL INSURANCE form</a>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>NATIONAL ID</td>
+            <td>
+                <button type="button" class="btn btn-danger btn-sm">
+                    Failed
+                </button>
+            </td>
+            <td>No NATIONAL ID form attached to request</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="row">
+
+    <div class="col-12">
+        <h4 class="header-title mb-3">Document Workflow Approval Tray</h4>
+        <table id="technical_requirement" class="table table-striped no-wrap table-bordered responsive"
+            style="font-size: 13px;color: #000; padding: 5px 10px !important; ">
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Workflow Required</th>
+                    <th>Reference</th>
+                    <th>Workflow Status</th>
+                    <th>Processed By</th>
+                    <th>Processed Date</th>
+                    <th>Reference(s)</th>
+                    <th>Evidence</th>
+                </tr>
+            </thead>
+            <tbody id="">
+                <tr>
+                    <td>1</td>
+                    <td>Team Lead</td>
+                    <td> </td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-sm">Not Started</button>
+                    </td>
+                    <td> </td>
+                    <td> </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Department</td>
+                    <td>DATA CAPTURER </td>
+
+                    <td>
+                        <button type="button" class="btn btn-danger btn-sm">Not Started</button>
+                    </td>
+                    <td> </td>
+                    <td> </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Complete</td>
+                    <td> </td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-sm">Not Started</button>
+                    </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-right mr-lg">
+        </div>
+    </div>
+
+
+</div>
+
+<table id="technical_requirement1" class="table table-striped no-wrap table-bordered responsive"
+    style="font-size: 13px;color: #000; padding: 5px 10px !important; ">
+
+    <thead>
+        <tr>
+            <th class="col-md-1"></th>
+            <th class="col-md-3">Document Name</th>
+            <th class="col-md-3"></th>
+
+            <th class="col-md-3">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        <input type="hidden" id="xx_id" name="xx_id">
+
+        <tr id="custom_tr453" class="custom_tr" data-id="453">
+            <td><span class="btn btn-xs btn-danger pull-right"><i class="fa fa-fw fa-close"></i></span> </td>
+            <td>
+                <a href="#loadsource" data-toggle="modal" data-id="453" class="open-viewRequest">
+                    <font color="black">
+                        <strong>PROPOSAL/CLAIM FORM</strong>
+                    </font>
+                </a>
+            </td>
+            <input type="hidden" name="tbl_document_checklist_id[]" value="453">
+            <input type="hidden" name="tbl_document_type_id[]" value="1">
+
+            <td><select id="proposal_mode" name="proposal_mode[]" class="form-control">
+                    <option value=""></option>
+                    <option value="1">Take
+                        Picture</option>
+                    <option value="2">Attach
+                    </option>
+                    <option value="3">Send
+                        Digital Request</option>
+                    <option value="4">Fill
+                        Digital Request</option>
+                </select>
+            </td>
+            <td>
+                <div id="proposal_file_yn" class="col-md-12" style="display:none;">
+                    <input type="file" class="form-control" id="proposal_file" name="proposal_file[]">
+                </div>
+                <div id="proposal_file_no" class="col-md-12" style="display:none;">
+                    <a href="#viewWebcam" type="button" data-id="453" data-toggle="modal"
+                        class="mb-xs mt-xs mr-xs btn btn-info open-viewWebcam"><i class="fa fa-camera"></i> </a>
+                    <font color="red"><strong>
+                            <div id="img_notif"> No Image Captured</div>
+                        </strong>
+                    </font>
+
+                    <input type="hidden" class="form-control" name="proposal_image[]" id="webcam_image">
+
+                </div>
+                <div id="digital" class="col-md-12" style="display:none;">
+                    <select name="notification_type[]" id="notification_type" class="form-control">
+                        <option value="">Notification Type</option>
+                        <option value="SMS">SMS
+                        </option>
+                        <option value="EMAIL">
+                            EMAIL</option>
+                    </select>
+                </div>
+                <div class="form-group" id="SMS" style="display:none;">
+                    <label class="col-md-12 control-label" for="profileAddress">Mobile
+                        Number</label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="sms[]" value="">
+                    </div>
+
+                </div>
+                <div class="form-group" id="EMAIL" style="display:none;">
+                    <label class="col-md-12 control-label" for="profileAddress">Email
+                        Address</label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="email[]" value="">
+                    </div>
+
+                </div>
+                <div id="viewWebcam" class="modal fade viewWebcam" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h4 class="modal-title" align="center">Image Capture</h4>
+                            </div>
+                            <div class="modal-body">
+                                <h1 class="text-center">Image Capture</h1>
+
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div id="my_camera"></div>
+                                        <br>
+                                        <input type="button" value="Take Snapshot" onclick="take_snapshot()">
+                                        <input type="hidden" name="image" class="image-tag">
+                                        <input type="hidden" name="id" id="id" class="image-id" value="453">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div id="results">Your image will appear here...
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 text-center">
+                                        <br>
+                                        <button name="bntCapture" type="submit" data-id="453"
+                                            class="btn btn-success bntCapture" disabled="">Submit</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+
+
+        <tr id="custom_tr454" class="custom_tr" data-id="454">
+            <td><span class="btn btn-xs btn-danger pull-right"><i class="fa fa-fw fa-close"></i></span> </td>
+            <td>
+                <a href="#loadsource" data-toggle="modal" data-id="454" class="open-viewRequest">
+                    <font color="black">
+                        <strong>NATIONAL ID</strong>
+                    </font>
+                </a>
+            </td>
+            <input type="hidden" name="tbl_document_checklist_id[]" value="454">
+            <input type="hidden" name="tbl_document_type_id[]" value="3">
+
+            <td><select id="proposal_mode" name="proposal_mode[]" class="form-control">
+                    <option value=""></option>
+                    <option value="1">Take
+                        Picture</option>
+                    <option value="2">Attach
+                    </option>
+                    <option value="3">Send
+                        Digital Request</option>
+                </select>
+            </td>
+            <td>
+                <div id="proposal_file_yn" class="col-md-12" style="display:none;">
+                    <input type="file" class="form-control" id="proposal_file" name="proposal_file[]">
+                </div>
+                <div id="proposal_file_no" class="col-md-12" style="display:none;">
+                    <a href="#viewWebcam" type="button" data-id="454" data-toggle="modal"
+                        class="mb-xs mt-xs mr-xs btn btn-info open-viewWebcam"><i class="fa fa-camera"></i> </a>
+                    <font color="red"><strong>
+                            <div id="img_notif"> No Image Captured</div>
+                        </strong>
+                    </font>
+
+                    <input type="hidden" class="form-control" name="proposal_image[]" id="webcam_image">
+
+                </div>
+                <div id="digital" class="col-md-12" style="display:none;">
+                    <select name="notification_type[]" id="notification_type" class="form-control">
+                        <option value="">Notification Type</option>
+                        <option value="SMS">SMS
+                        </option>
+                        <option value="EMAIL">
+                            EMAIL</option>
+                    </select>
+                </div>
+                <div class="form-group" id="SMS" style="display:none;">
+                    <label class="col-md-12 control-label" for="profileAddress">Mobile
+                        Number</label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="sms[]" value="">
+                    </div>
+
+                </div>
+                <div class="form-group" id="EMAIL" style="display:none;">
+                    <label class="col-md-12 control-label" for="profileAddress">Email
+                        Address</label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="email[]" value="">
+                    </div>
+
+                </div>
+                <div id="viewWebcam" class="modal fade viewWebcam" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <form id="decline_form" action="" method="POST" autocomplete="off">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" align="center">Image Capture</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h1 class="text-center">Image Capture</h1>
+
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div id="my_camera"></div>
+                                            <br>
+                                            <input type="button" value="Take Snapshot" onclick="take_snapshot()">
+                                            <input type="hidden" name="image" class="image-tag">
+                                            <input type="hidden" name="id" id="id" class="image-id" value="454">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div id="results">Your image will appear here...
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 text-center">
+                                            <br>
+                                            <button name="bntCapture" type="submit" data-id="454"
+                                                class="btn btn-success bntCapture" disabled="">Submit</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>
+
+
+
+
+@extends('layouts.main-master')
+@section('content')
+{{-- flexdatalist --}}
+<link href="{{asset('/assets/libs/flexdatalist/css/jquery.flexdatalist.min.css')}}" id="bootstrap-style"
+    rel="stylesheet" type="text/css" />
+<style>
+    .flexdatalist-results li span.highlight {
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    .highlight {
+        background-color: #CCC;
+        color: #FFF;
+        padding: 3px 6px;
+    }
+
+    .flexdatalist-results li.active {
+        background: #2B82C9;
+        color: #fff;
+        cursor: pointer;
+    }
+</style>
+<style>
+    .list-nostyled {
+        list-style: none;
+    }
+
+    .tab-primary {
+        color: #fff;
+        background-color: #0f9cf3 !important;
+        border-color: #0f9cf3 !important;
+    }
+
+    .tab-white {
+        color: #fff;
+    }
+
+    .card .collapsed .card-header {
+        background-color: #f1f5f7 !important;
+        border-bottom: 0 solid #f1f5f7 !important;
+    }
+
+    .card .collapsed .card-header .tab-white {
+        color: #0a1832 !important;
+    }
+
+    element.style {}
+
+    .alert-danger {
+        color: #921c32;
+        background-color: #fdd5dd;
+        border-color: #fbc1cb;
+    }
+
+    .alert-dismissible {
+        padding-right: 3.75rem;
+    }
+
+    .alert {
+        padding: 0.3rem 1.25rem;
+    }
+
+    .badge-soft-success {
+        color: #169e38 !important;
+    }
+
+    .badge-light {
+        /* color: #000; */
+        color: #817b7b;
+        background-color: #d8dce1;
+        /* hide upcoming steps */
+        /* color: #817b7b00;
+    background-color: #d8dce100; */
+    }
+
+    .mm-1 {
+        margin: 0.15rem !important;
+    }
+
+    .black {
+        color: #000 !important;
+    }
+
+    .mr-2 {
+        margin-right: 4px;
+    }
+
+    .form-content {
+        border: 1px solid #e8e8e8;
+        padding: 20px;
+        background-color: #fff;
+    }
+
+    .card-header-b {
+        border-bottom: 1px solid #dad3d3;
+    }
+
+    .card-body-grey {
+        background-color: #f1f5f7;
+    }
+
+    .bb {
+        border-bottom: 1px solid #5b5757;
+        margin-bottom: 6px;
+        margin-top: 20px;
+    }
+
+    .phone_number_invalid {
+        font-size: 12px;
+        color: rgb(243, 47, 83);
+        margin-top: 5px;
+        display: none;
+    }
+</style>
+{{-- <form class="custom-validation" action="{{route('update-company-profile')}}" method="post"
+    enctype="multipart/form-data"> --}}
+    @csrf
+    @if(session('success_message'))
+    <div class="alert alert-success">
+        {{ session('success_message') }}
+    </div>
+    @endif
+    @if(session('error_message'))
+    <div class="alert alert-danger">
+        {{ session('error_message') }}
+    </div>
+    @endif
+    @if($errors->any())
+    <div class="alert alert-danger parsley-danger">
+        <ul>
+            @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <h5 class="card-header">
+                    Product Options
+                </h5>
+
+                <div class="card-body">
+                    <div class="d-grid mb-3">
+                        <button type="button"
+                            class="btn btn-primary waves-effect waves-light d-flex justify-content-between">
+                            <span>
+                                <i class="ri-radio-button-line align-middle me-2"></i>
+                                <span>Customer Info</span>
+                            </span>
+                            <i class="ri-arrow-right-line align-middle ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-9">
+            <div class="card">
+                <h5 class="card-header">
+                    Customer Details
+                </h5>
+
+                <div class="card-body">
+                    <form class="custom-validation" novalidate="">
+
+                        <div class="row" id="first-doc">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="fullname" class="form-label">Reference Name</label>
+                                    <input type="text" class="form-control" id="fullname" required="">
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="customer-number" class="form-label">Document Type *</label>
+                                    @php
+                                    $document_types = App\Models\DocumentType::all();
+                                    @endphp
+                                    <select class="form-select" id="product" required="">
+                                        <option selected="" disabled="" value="">Choose...</option>
+                                        @foreach ($document_types as $document_type)
+                                        <option value="{{$document_type->id}}">{{$document_type->document_name}}
+                                        </option>
+                                        @endforeach
+                                    </select>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Attach Doc</label>
+                                    <input type="file" class="form-control" id="email" required="">
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div id="more-doc">
+
+                        </div>
+                        <div>
+                            <button type="button" id="add_row" class="btn btn-primary waves-effect btn-sm waves-light">
+                                <i class="ri-close-line align-middle"></i> Add Another
+                            </button>
+                        </div>
+
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-primary" type="submit">Save & Proceed</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {{--
+</form> --}}
+
+@endsection
+
+@section('application-status-script')
+<script src="{{asset('/assets/libs/select2/js/select2.min.js')}}"></script>
+<script src="{{asset('/assets/libs/parsleyjs/parsley.min.js')}}"></script>
+<script src="{{asset('/assets/libs/signature/js/jSignature.min.js')}}"></script>
+<script src="{{asset('/assets/libs/flexdatalist/js/jquery.flexdatalist.min.js')}}"></script>
+<script src="{{asset('/assets/js/pages/form-validation.init.js')}}"></script>
+<script src="{{asset('/assets/js/pages/form-advanced.init.js')}}"></script>
+<script src="{{asset('/assets/js/ajax-utils.js')}}"></script>
+
+
+<!-- Sweet Alerts js -->
+<script src="{{asset('/assets/libs/sweetalert2/sweetalert2.min.js')}}"></script>
+<!-- Sweet alert init js-->
+<script src="{{asset('/assets/js/pages/sweet-alerts.init.js')}}"></script>
+
+<script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('#add_row').on('click', function () {
+            // Clone the first document and append it to #more-doc
+            var clonedDoc = $('#first-doc').clone();
+            clonedDoc.find('.col-md-4').last().append(`
+                <div style="margin-bottom: 2px;">
+                    <button type="button" class="btn btn-danger waves-effect btn-sm waves-light removedoc" style="float: right; margin-bottom: 10px;">
+                        <i class="ri-delete-bin-line align-middle"></i>
+                    </button>
+                </div>
+            `);
+
+            $('#more-doc').append(clonedDoc);
+        });
+
+        $('#more-doc').on('click', '.removedoc', function () {
+            $(this).closest('.row').remove(); // Remove the closest .row element
+        });
+    });
+</script>
+
+@stop

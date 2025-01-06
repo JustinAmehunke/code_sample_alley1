@@ -1,0 +1,64 @@
+version: "3.7"
+services:
+  app:
+    container_name: app
+    # platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    depends_on:
+      - database
+    links:
+      - database
+    networks:
+      - app_network
+    volumes:
+      - .:/var/www/app
+      - .docker/php/php.ini:/usr/local/etc/php/conf.d/local.ini
+
+  # Nginx Service
+  webserver:
+    image: nginx:alpine
+    container_name: webserver
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8100:80"
+      # - "443:443"
+    depends_on:
+      - app
+    networks:
+      - app_network
+    volumes:
+      - ./:/var/www/app
+      - ./.docker/nginx/conf.d/:/etc/nginx/conf.d/
+
+  # DB Service
+  database:
+    image: mariadb:10.7.8
+    container_name: oldmutual_database
+    #    restart: always
+    working_dir: /etc/mysql
+    tty: true
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - 3333:3306
+    volumes:
+      - ./storage:/app
+    #   - ./.docker/db/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+    command: --max_allowed_packet=67232322108864 --default-authentication-plugin=mysql_native_password
+    networks:
+      - app_network
+
+#Docker Networks
+networks:
+  app_network:
+    driver: bridge
+volumes:
+  dbdata:
+    driver: local
